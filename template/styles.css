@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#content p {
+    margin: 20px;
+    font-size: 20px;
+}
+
+#rating {
+    margin-top: 20px;
+}
+
+#initialForm {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#initialForm label, #initialForm input, #initialForm select {
+    margin: 10px;
+}
+
+/* 以下にレスポンシブデザインのためのスタイルを追加 */
+@media (max-width: 600px) {
+    body, #initialForm, #experimentDescription, #textDisplay, #formalityRating, #impactRating, #experimentEnd {
+        text-align: left;
+        padding: 10px;
+    }
+
+    #content p {
+        font-size: 16px; /* 小さな画面用の文字サイズを調整 */
+        margin: 10px; /* マージンの調整 */
+    }
+
+    #initialForm label, #initialForm input, #initialForm select {
+        margin: 5px; /* 小さな画面用のマージンを調整 */
+    }
+
+    img {
+        width: 100%; /* 画像が画面幅に合わせてリサイズされるように設定 */
+        height: auto;
+    }
+}
+
+.class1 {
+    display: block;
+    margin: auto;
+  }

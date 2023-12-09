@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フォント印象実験</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 参加者情報入力フォーム -->
+    <div id="initialForm" style="font-family: Arial, sans-serif; text-align: center;">
+        <h2>参加者情報入力</h2>
+        <label for="participantNumber">番号:</label>
+        <input type="text" id="participantNumber" name="participantNumber" oninput="checkInput()"><br>
+        <label for="gender">性別:</label>
+        <select id="gender" name="gender">
+            <option value="male">男性</option>
+            <option value="female">女性</option>
+            <option value="neutral">答えたくない</option>
+        </select><br>
+        <button onclick="startExperiment()" id="startButton" disabled>実験を開始</button>
+    </div>    
+
+    <!-- 実験説明画面 -->
+    <div id="experimentDescription" style="display: none;">
+        <h2>実験の説明</h2>
+        <p>これからは複数の文章とそれぞれの文章に対する複数の質問に答えてもらいます。</p>
+        <p>文章は 0.2 秒しか提示されないので注意深く画面を見つめてください。</p>
+        <p>なお、文章は画面の上側に表示されるので上側を注視してください。</p>
+        <p>準備ができたら、下のボタンを押して実験を開始してください。</p>
+        <button onclick="startTextDisplay()">実験を開始</button>
+    </div>
+
+    <!-- 実験コンテンツ -->
+    <!-- テキスト表示画面 -->
+    <div class = "class1" id="textDisplay" style="display: none;">
+        <img src="photos/マティス-M.jpg" alt="画像の説明" width="1000" height="400"/>
+    </div>
+    
+    <!-- フォーマル度の評価画面 -->
+    <div id="formalityRating" style="display: none;">
+        <label for="formality">このテキストのフォーマル度を評価してください（1: 非常にカジュアル, 5: 非常にフォーマル）:</label>
+        <input type="number" id="formality" name="formality" min="1" max="5">
+        <button onclick="submitFormalityRating()">評価を送信</button>
+    </div>
+
+    <!-- インパクトの評価画面 -->
+    <div id="impactRating" style="display: none;">
+        <label for="impact">このテキストのインパクトを評価してください（1: 非常に弱い, 5: 非常に強い）:</label>
+        <input type="number" id="impact" name="impact" min="1" max="5">
+        <button onclick="submitImpactRating()">評価を送信</button>
+    </div>
+
+    <!-- 実験終了画面 -->
+    <div id="experimentEnd" style="display: none;">
+        <h2>実験終了</h2>
+        <p>ご協力ありがとうございました。</p>
+        <button onclick="downloadResults()">結果をダウンロード</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
