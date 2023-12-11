@@ -1,3 +1,8 @@
+#questionCount {
+    text-align: left; /* 右揃えに設定 */
+    margin-right: 20px; /* 右側のマージンを設定 */
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -46,4 +51,23 @@ body {
 .class1 {
     display: block;
     margin: auto;
-  }
+}
+
+#progressBar {
+    width: 100%;
+    background-color: #e0e0e0; /* バーの背景色 */
+    border-radius: 10px; /* 角の丸み */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 影の効果 */
+    margin: 20px 0; /* 余白 */
+}
+
+#progressBar span {
+    display: block;
+    height: 20px;
+    border-radius: 10px; /* 角の丸み */
+    background-color: #4caf50; /* バーの色 */
+    text-align: center;
+    line-height: 20px;
+    color: white; /* テキストの色 */
+    transition: width 0.4s ease-in-out; /* アニメーションの効果 */
+}

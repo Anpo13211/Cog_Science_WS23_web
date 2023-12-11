@@ -8,6 +8,28 @@ const imagesAndFonts = [
 let currentImageIndex = 1;
 let results = [];
 let tempresult = {};
+var currentStep = 0;
+var totalSteps = 2;
+
+// ページの読み込み時にプログレスバーを0%に設定
+window.onload = function() {
+    resetProgressBar();
+};
+
+function updateProgressBar() {
+    var progressPercentage = (currentStep / totalSteps) * 100;
+    document.getElementById('progressBar').style.width = progressPercentage + '%';
+}
+
+function resetProgressBar() {
+    currentStep = 0;
+    updateProgressBar(0);
+}
+
+function switchScreen() {
+    currentStep++;
+    updateProgressBar();
+}
 
 function checkInput() {
     var participantNumber = document.getElementById('participantNumber').value;
@@ -53,9 +75,12 @@ function startTextDisplay() {
             }, 1000); // 1秒の遅延
         }, 200); // 0.2秒の表示
     }, 1000); // 1秒の遅延
+    switchScreen()
 }
 
 function showNextImage() {
+    resetProgressBar();
+    switchScreen();
     if (currentImageIndex < imagesAndFonts.length) {
         const imageData = imagesAndFonts[currentImageIndex];
         const imageElement = document.getElementById('textDisplay').getElementsByTagName('img')[0];
@@ -101,6 +126,7 @@ function submitFormalityRating() {
     // フォーマル度の評価画面を隠し、インパクトの評価画面を表示
     document.getElementById('formalityRating').style.display = 'none';
     document.getElementById('impactRating').style.display = 'block';
+    switchScreen();
 }
 
 function submitImpactRating() {

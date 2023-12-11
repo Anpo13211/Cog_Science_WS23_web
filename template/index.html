@@ -39,6 +39,10 @@
     
     <!-- フォーマル度の評価画面 -->
     <div id="formalityRating" style="display: none;">
+        <div id="progressBar">
+            <span id="progress"></span>
+        </div>
+        <div id="questionCount">問題数: <span id="currentQuestion">1</span> / <span id="totalQuestions">2</span></div>
         <label for="formality">このテキストのフォーマル度を評価してください（1: 非常にカジュアル, 5: 非常にフォーマル）:</label>
         <input type="number" id="formality" name="formality" min="1" max="5">
         <button onclick="submitFormalityRating()">評価を送信</button>
@@ -46,6 +50,10 @@
 
     <!-- インパクトの評価画面 -->
     <div id="impactRating" style="display: none;">
+        <div id="progressBar">
+            <span id="progress"></span>
+        </div>
+        <div id="questionCount">問題数: <span id="currentQuestion">2</span> / <span id="totalQuestions">2</span></div>
         <label for="impact">このテキストのインパクトを評価してください（1: 非常に弱い, 5: 非常に強い）:</label>
         <input type="number" id="impact" name="impact" min="1" max="5">
         <button onclick="submitImpactRating()">評価を送信</button>
